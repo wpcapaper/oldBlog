@@ -6,11 +6,11 @@
 <li>Hexo</li>
 <li>MarkEditor(Markdown编辑工具 )</li>
 </ul>
-<p>##1、软件安装<br>上述除了hexo，其他的运行安装包安装即可，链接如下</p>
+<p>##1、软件安装##<br>上述除了hexo，其他的运行安装包安装即可，链接如下</p>
 <ul>
 <li>Github Desktop:<a href="https://desktop.github.com/" target="_blank" rel="external">https://desktop.github.com/</a></li>
 <li>Node.js:<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></li>
-<li>MarkEditor:<a href="http://zrey.com/app/markeditor?from=app" target="_blank" rel="external">http://zrey.com/app/markeditor?from=app</a><br>##2、Hexo的安装<br>安装好Github Desktop之后，登录客户端后会自动配置好SSH，比较省事。接下来打开Git Shell</li>
+<li>MarkEditor:<a href="http://zrey.com/app/markeditor?from=app" target="_blank" rel="external">http://zrey.com/app/markeditor?from=app</a><br>##2、Hexo的安装##<br>安装好Github Desktop之后，登录客户端后会自动配置好SSH，比较省事。接下来打开Git Shell</li>
 </ul>
 <p>如果对SSH的配置不放心，可以在shell里运行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
 <p>若出现</p>
@@ -24,9 +24,9 @@
 <p>然后就是进到这个文件夹里面，执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">cnpm install</div></pre></td></tr></table></figure></p>
 <p>如果没报什么大错的话，安装就算成功了，大概是下面这个样子:<br><img src="/2017/03/14/Blog施工记/hexo_1.png" alt=""><br>这时候可以输入下面的命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s     #hexo server的简写</div></pre></td></tr></table></figure></p>
 <p>然后打开浏览器，输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>看看效果，大概应该是这个样子：<br><img src="/2017/03/14/Blog施工记/hexo_2.png" alt=""><br>说明hexo已经可以使用了~，如果觉得这个主题还不错的话，那么只要把这个东西传到github上去就行了</p>
-<p>##3、主题的配置<br>显然我想换个别的主题，就是之前提到的<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="external">maupassant</a>,按照皮肤的安装方法一步一步安装即可，注意使用cnpm而不是npm，配置好，<strong>改好_config文件的theme之后</strong>，输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g  #hexo generate 的简写</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
+<p>##3、主题的配置##<br>显然我想换个别的主题，就是之前提到的<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="external">maupassant</a>,按照皮肤的安装方法一步一步安装即可，注意使用cnpm而不是npm，配置好，<strong>改好_config文件的theme之后</strong>，输入以下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g  #hexo generate 的简写</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
 <p>看一下效果吧~<br><img src="/2017/03/14/Blog施工记/hexo_3.png" alt=""><br>看样子主题也改好了，那么事不宜迟，我们把这个东西传到github上面吧~</p>
-<p>##4、GitHub上的配置<br>打开GitHub的网页端，新建一个仓库，注意仓库名为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你的用户名.github.io</div></pre></td></tr></table></figure></p>
+<p>##4、GitHub上的配置##<br>打开GitHub的网页端，新建一个仓库，注意仓库名为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你的用户名.github.io</div></pre></td></tr></table></figure></p>
 <p>如下图所示<br><img src="/2017/03/14/Blog施工记/hexo_4.png" alt=""><br>创建之后点击仓库的Settings，往下翻找到Github Pages这一项，choose a theme<br><img src="/2017/03/14/Blog施工记/hexo_5.png" alt=""><br>然后输入你的个人页面的域名，也就是这个仓库名，会看到你刚才选的那个主题<br><img src="/2017/03/14/Blog施工记/hexo_6.png" alt=""><br>这样就说明你的GitHub Pages已经弄好了，接下来我们把在本地弄好的Hexo传上去，在git shell中输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>然后打开_config.yml，配置一下最后的deploy<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
 <p>保存好后在Git Shell中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d   #hexo deploy的缩写</div></pre></td></tr></table></figure></p>
