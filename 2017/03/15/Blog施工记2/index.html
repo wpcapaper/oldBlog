@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="一个喜爱音乐游戏小菜鸡的Blog"><title>Blog施工记2 | 菜鸡布拉格</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Blog施工记2</h1><a id="logo" href="/.">菜鸡布拉格</a><p class="description">留给菜鸡的时间不多了，赶快变强吧</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Blog施工记2</h1><div class="post-meta">Mar 15, 2017<span> | </span><span class="category"><a href="/categories/Blog施工/">Blog施工</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-thread-key="2017/03/15/Blog施工记2/" href="/2017/03/15/Blog施工记2/#comments" class="ds-thread-count"></a><div class="post-content"><p>经过昨天的折腾，Blog也就初步成型了，不过还是有些地方有问题，比如分类这个东西没有用上，比如about点开是404，就像下面：<br><img src="/2017/03/15/Blog施工记2/hexo2_1.png" alt=""><br>说明about的页面并不存在，需要我们自己补上，看看皮肤的文档怎么说好了</p>
+<blockquote>
+<p>menu - 自定义页面及菜单，依照已有格式填写。填写后请在source目录下建立相应名称的文件夹，并包含index.md文件，以正确显示页面。导航菜单中集成了FontAwesome图标字体，可以在这里选择新的图标，并按照相关说明使用。</p>
+</blockquote>
+<p>到这里我们有两个选择：1、去掉about 2、加上about页面；既然这篇文章在这放着，我们肯定选1(<br>如何添加页面，文档里也有提到：</p>
+<blockquote>
+<p>添加页面<br>在source目录下建立相应名称的文件夹，然后在文件夹中建立index.md文件，并在index.md的front-matter中设置layout为layout: page。若需要单栏页面，就将layout设置为 layout: single-column。</p>
+</blockquote>
+<p>那么问题来了，source目录是皮肤里的source还是根目录的source？啥是front-matter？<br>首先我们回答第一个问题，source是根目录里的source目录，当然你也可以试试放到皮肤的source目录里看看会发生什么(<br>至于第二个问题，我们可以先打开我们用hexo new命令生成的md看看，比如昨天写的那篇东西：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Blog施工记</div><div class="line">date: 2017-03-14 19:00:53</div><div class="line"><span class="section">tags: Hexo Win10</span></div><div class="line">---</div><div class="line">一直想DIY一个技术博客之类的东西...</div></pre></td></tr></table></figure></p>
+<p>再查阅一下<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">Hexo的文档</a>，我们可以确认前面这个用”—“分割开的就是Front-matter了，具体的一些设定选项我也搬了过来，注意hexo的表格写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| Setting | Description | Default | </div><div class="line">|:-----|:-----|:-----|</div><div class="line">| layout | Layout | wow |</div></pre></td></tr></table></figure>
+<p>其中<strong>|:—–|</strong>表示左对齐，<strong>|:—–:|</strong>表示居中，<strong>|—–:|</strong>为右对齐</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">layout</td>
+<td style="text-align:left">Layout</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">Title</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">date</td>
+<td style="text-align:left">Published date</td>
+<td style="text-align:left">File created date</td>
+</tr>
+<tr>
+<td style="text-align:left">updated</td>
+<td style="text-align:left">Updated date</td>
+<td style="text-align:left">File updated date</td>
+</tr>
+<tr>
+<td style="text-align:left">comments</td>
+<td style="text-align:left">Enables comment feature for the post</td>
+<td style="text-align:left">true</td>
+</tr>
+<tr>
+<td style="text-align:left">tags</td>
+<td style="text-align:left">Tags (Not available for pages)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">categories</td>
+<td style="text-align:left">Categories (Not available for pages)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">permalink</td>
+<td style="text-align:left">Overrides the default permalink of the post</td>
+</tr>
+</tbody>
+</table>
+<p>另外注意到有关tags和categories的例子：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">categories:</div><div class="line"><span class="bullet">- </span>Sports</div><div class="line"><span class="bullet">- </span>Baseball</div><div class="line">tags:</div><div class="line"><span class="bullet">- </span>Injury</div><div class="line"><span class="bullet">- </span>Fight</div><div class="line"><span class="bullet">- </span>Shocking</div></pre></td></tr></table></figure></p>
+<p>这样的话我发现：1、我tags写法不太规范 2、分类的话要在front-matter里加入categories相关的东西，这样的话分类这个东西就用上了。</p>
+<p>既然所有疑问都得到了解答，就可以放心地创建about页面了，按照说明写个index.md进去：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"><span class="section">layout: page</span></div><div class="line">---</div><div class="line">wow</div></pre></td></tr></table></figure></p>
+<p>接着在我们昨天的例子的hello world里加一下categories的东西，最后看看效果吧：<br><img src="/2017/03/15/Blog施工记2/hexo2_2.png" alt=""><br>Perfect!</p>
+<p>另外关于插入图片的问题，我参考了这篇：<br><a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">http://www.tuicool.com/articles/umEBVfI</a><br>关于表格部分，参考：<br><a href="http://www.714.hk/msi-182876-1-1.html" target="_blank" rel="external">http://www.714.hk/msi-182876-1-1.html</a><br>那么这次施工小记就到这里吧~</p>
+</div><div class="tags"><a href="/tags/Hexo/">Hexo</a><a href="/tags/front-matter/">front-matter</a><a href="/tags/表格/">表格</a></div><div class="post-nav"><a href="/2017/03/14/Blog施工记/" class="next">Blog施工记</a></div><div data-thread-key="2017/03/15/Blog施工记2/" data-title="Blog施工记2" data-url="http://wpcapaper.github.io/2017/03/15/Blog施工记2/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2017/03/15/Blog施工记2/" data-title="Blog施工记2" data-url="http://wpcapaper.github.io/2017/03/15/Blog施工记2/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://wpcapaper.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog施工/">Blog施工</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Win10/" style="font-size: 15px;">Win10</a> <a href="/tags/front-matter/" style="font-size: 15px;">front-matter</a> <a href="/tags/表格/" style="font-size: 15px;">表格</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/Blog施工记2/">Blog施工记2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/Blog施工记/">Blog施工记</a></li></ul></div><div class="widget"><div class="comments-title"><i class="fa fa-comment-o"> 最近评论</i></div><div data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1" class="ds-recent-comments"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://bemaniwiki.com/index.php?FrontPage" title="BEMANIWiki 2nd" target="_blank">BEMANIWiki 2nd</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">菜鸡布拉格.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'wpcap'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
